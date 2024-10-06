@@ -4,111 +4,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get to Know Abdulaziz</title>
+    <title>Password Protected Page</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        header {
-            background-color: #3498db;
-            color: #fff;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        h2 {
-            color: #3498db;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        .faq {
-            margin-top: 30px;
-        }
-
-        .faq h3 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .faq p {
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-
-        .interests {
+            font-family: Arial, sans-serif;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
         }
 
-        .interest {
-            background-color: #ecf0f1;
-            color: #2c3e50;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-
-        .social-link {
-            text-align: center;
+        #loginForm,
+        #content {
+            background-color: white;
             padding: 20px;
-            background-color: #3498db;
-            color: #fff;
-        }
-        .social-link a {
-            display: inline-block;
-            background-color: #fff;
-            color: #3498db;
-            padding: 10px 20px;
-            text-decoration: none;
             border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .social-link a:hover {
-            background-color: #2c3e50;
-            color: #fff;
+
+        #content {
+            display: none;
         }
     </style>
-    <script defer data-domain="deft-sprinkles-c02d37.netlify.app" src="https://plausible.io/js/script.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Abdulaziz Yafai</h1>
-            <p>Age: ~28 | Status: Single "duh!!"</p>
-            <script defer data-domain="deft-sprinkles-c02d37.netlify.app" src="https://plausible.io/js/script.js"></script>
-
-        </header>
-        
+    <div id="loginForm">
+        <h2>Enter Password</h2>
+        <input type="password" id="passwordInput" placeholder="Password">
+        <button onclick="checkPassword()">Submit</button>
     </div>
+
+    <div id="content">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Get to Know Abdulaziz</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    background-color: #f5f5f5;
+                    color: #333;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 20px;
+                }
+        
+                .container {
+                    max-width: 800px;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+                    overflow: hidden;
+                }
+        
+                header {
+                    background-color: #3498db;
+                    color: #fff;
+                    text-align: center;
+                    padding: 30px 20px;
+                }
+        
+                h1 {
+                    margin: 0;
+                    font-size: 2.5em;
+                }
+        
+                .content {
+                    padding: 20px;
+                }
+        
+                h2 {
+                    color: #3498db;
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 10px;
+                }
+        
+                .faq {
+                    margin-top: 30px;
+                }
+        
+                .faq h3 {
+                    color: #2c3e50;
+                    margin-bottom: 5px;
+                }
+        
+                .faq p {
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                }
+        
+                .interests {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    margin-top: 10px;
+                }
+        
+                .interest {
+                    background-color: #ecf0f1;
+                    color: #2c3e50;
+                    padding: 5px 15px;
+                    border-radius: 20px;
+                    font-size: 0.9em;
+                }
+        
+                .social-link {
+                    text-align: center;
+                    padding: 20px;
+                    background-color: #3498db;
+                    color: #fff;
+                }
+        
+                .social-link a {
+                    display: inline-block;
+                    background-color: #fff;
+                    color: #3498db;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    transition: background-color 0.3s, color 0.3s;
+                }
+        
+                .social-link a:hover {
+                    background-color: #2c3e50;
+                    color: #fff;
+                }
+            </style>
+            <script defer data-domain="deft-sprinkles-c02d37.netlify.app" src="https://plausible.io/js/script.js"></script>
+        </head>
+        
+        <body>
+            <div class="container">
+                <header>
+                    <h1>Abdulaziz Yafai</h1>
+                    <p>Age: ~28 | Status: Single "duh!!"</p>
+                </header>
+                <div class="content">
+                    <h2>About myself</h2>
+                    <p>Hey there! I'm Abdulaziz, born and raised in Sana'a, Yemen. Picture this: a bustling household with 7
+                        older siblings
+                        (yep, I'm the baby of the family), all now married with kids of their own. Growing up in Yemen shaped a
+                        big part of
+                        who I am today - the friendships, the culture, it's all part of my DNA.</p>
+                    <p>Life took an unexpected turn when the war started in 2015, and I found myself packing my bags for the US.
+                        Talk about
+                        a change of scenery! I dove headfirst into college life, choosing Software Engineering as my field
+                        (because who
+                        doesn't love solving puzzles?). It was during these college years that I met my ride-or-die friends -
+                        the ones
+                        who've seen me through late-night coding sessions and ultimate frisbee tournaments alike.</p>
+                    <p>Fast forward to now, and you'll find me in Seattle, crafting code for Amazon. It's a far cry from the
+                        streets of
+                        Sana'a, but hey, life's an adventure, right? Through it all, my Yemeni roots and my love for both
+                        cultures continue
+                        to shape my worldview and my dreams for the future.</p>
+        
+        
+                    <h2>About my future wife</h2>
+                    <p>When I think about my future wife, I envision a partner who's not just my better half, but my best friend
+                        and
+                        confidante. Here's what I'm looking for:</p>
+                    <ul>
+                        <li>A woman who loves Allah deeply and understands Islam, not just as a set of rules, but as a way of
+                            life that
+                            guides and enriches our journey together.</li>
+                        <li>Someone who's social and outgoing, who can light up a room with her presence and make friends
+                            easily. I'm all
+                            about building a strong community, and I'd love a partner who shares that passion.</li>
+                        <li>A family-oriented person who puts our family first, but also knows the importance of maintaining her
+                            own
+                            identity and pursuits.</li>
+                        <li>An open-minded individual who's curious about the world and always eager to learn. I'm looking for
+                            someone who
+                            can challenge me intellectually and grow with me.</li>
+                        <li>A woman with a great sense of humor - because life's too short not to share a good laugh every day.
+                        </li>
+                        <li>Someone who's ambitious and has her own goals, whether that's in her career, personal growth, or
+                            making a
+                            difference in the community.</li>
+                        <li>A partner who's comfortable with both her cultural roots and the multicultural world we live in.
+                            Bonus points if
+                            she's interested in learning about Yemeni culture!</li>
+                    </ul>
+                    <p>Ultimately, I'm looking for a teammate in life - someone to share the joys, weather the storms, and build
+                        a beautiful
+                        future together, inshaAllah.</p>
+        
+                    <h2>FAQ</h2>
+                    <div class="faq">
+                        <h3>Where do you see yourself in 10 years?</h3>
+                        <p><strong>Family:</strong> I see myself married and have kids. I have a clear vision on how to educate
+                            my kids and create a healthy environment for them to flourish and become productive.</p>
+                        <p><strong>Socially:</strong> My wife, kids and I are part of a big fun islamic community. We volunteer,
+                            and do most of our activities in that community. I also see my house as the place where all family
+                            friends like to be during events. Our family is the type of family that most of the neighbors know.
+                            Also I would love to see myself giving back to Yemen. Help spread the knowledge I have and share
+                            everything I could with them.</p>
+                        <p><strong>Career:</strong> Principal software engineer that helps form new ideas and bring them to
+                            life. I have my own business on the side.</p>
+        
+                        <h3>What do you look for in a girl?</h3>
+                        <p>In following order:</p>
+                        <ol>
+                            <li><strong>Religion:</strong> Someone who matches my level of religiousness. Someone who's open
+                                minded and not muslim just because they were born in a muslim house. Curious and like to learn.
+                            </li>
+                            <li><strong>Communicate:</strong> Communication is a must have requirement in any relationship.
+                                Thus, a girl that knows how to communicate effectively is crucial for marriage success.</li>
+                            <li><strong>Social:</strong> A wife that is social is a must have in my opinion. I like ladies who
+                                know how to be active in a community and know how to make friends and stay active. Can manage to
+                                be nice to the people I care about.</li>
+                            <li><strong>Hospitable:</strong> This kinda overlaps with c, but again, I love to be around people,
+                                and it's a requirement to have someone who loves to be hospitable to people too.</li>
+                            <li><strong>Ambitious:</strong> Someone who has goals. Someone that can set family and themselves to
+                                success.</li>
+                            <li><strong>Fun (must have):</strong> Someone who is advantageous. Like to try new things.
+                                Appreciate music, art.</li>
+                        </ol>
+        
+                        <h3>What do you do for a living?</h3>
+                        <p>I work for Amazon as a Software Engineer. I work mostly with artists and designers. My specific role
+                            is to design tools that make their life easier and speed the process of producing interior designs.
+                            Ironically, part of my job is to try to automate interior design so we can get rid of artists.</p>
+        
+                        <h3>How do you resolve a conflict?</h3>
+                        <p>I normally like to assess what is the cause of a conflict before resolving it. Is it a temporary heat
+                            caused by a stressful situation? Is it caused by miscommunication? Fear? Expectation? .. etc. If the
+                            issue is not a life changing decision, then there are many ways to deal with it, not going to list
+                            them in this doc. However, if the issue is a life changing situation then I do the following:</p>
+                        <ul>
+                            <li>Sit and talk logically about it respecting the values that we both value. What does religion say
+                                about it? If it's not religion related, what are the pros and cons? If that doesn't help, can I
+                                compromise with no harm? .. etc</li>
+                            <li>If the above doesn't work, then a third eye might help. I normally pick a person that we both
+                                trust, and hope they bring a fresh idea, or help us see the correct choice.</li>
+                        </ul>
+        
+                        <h3>What keeps you up at night?</h3>
+                        <p>When things go wrong with my family. I am the type of person who's calm at any incident unless it's
+                            related to my family.</p>
+        
+                        <h3>What do you enjoy most?</h3>
+                        <p>The reaction of someone who likes my food. Guess what I hate most?</p>
+        
+                        <h3>Best movies and shows</h3>
+                        <ul>
+                            <li>GOT: my absolute favorite!!!</li>
+                            <li>Fury Movie</li>
+                            <li>Catch me if you can, wolf of wall street, Inception (or anything that Leonardo acts)</li>
+                            <li>Forrest Gump</li>
+                        </ul>
+        
+                        <h3>Favorite Islamic scholar</h3>
+                        <p>No one, I normally like to seek answers myself. Or listen to multiple opinions and judge which
+                            opinion I want to go with.</p>
+        
+                        <h3>Favorite sports</h3>
+                        <div class="interests">
+                            <span class="interest">Ultimate Frisbee</span>
+                            <span class="interest">Hiking</span>
+                            <span class="interest">Tennis</span>
+                            <span class="interest">Pickleball</span>
+                            <span class="interest">Paddle</span>
+                        </div>
+        
+                        <h3>Cereal first or milk first?</h3>
+                        <p>I don't eat cereal. Prefer warm breakfast made with love.</p>
+        
+                        <h3>What if things go south in a marriage?</h3>
+                        <p>With the world that we live in, and with a 53% divorce rate, it's very likely (may Allah forbid) that
+                            I will end up there. Regardless, what matters to me is that if divorce happens, I do my absolute
+                            best to end it on good terms. Easier said than done, but I will do everything I can to reduce the
+                            blast radius and keep in mind that there are no winners and losers in a divorce.</p>
+        
+                        <h3>What are your weaknesses?</h3>
+                        <p>Sometimes I'm a little impatient. But I've got to a really good point where I am always aware when
+                            this issue comes up.</p>
+                    </div>
+                </div>
+                <div class="social-link">
+                    <p>Want to see more of my daily life and adventures?</p>
+                    <a href="https://www.instagram.com/your_instagram_handle/" target="_blank">Check out my Instagram</a>
+                </div>
+            </div>
+        </body>
+        
+        </html>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = "aziz"; // Replace with your chosen password
+            const input = document.getElementById("passwordInput").value;
+            if (input === password) {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        }
+    </script>
 </body>
 
 </html>
