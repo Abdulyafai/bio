@@ -2,8 +2,11 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true
-  conditions = {Role = ["admin"]}
 
 [context.production.environment]
   PASSWORD = "aziz"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Basic-Auth = ":${PASSWORD}"
