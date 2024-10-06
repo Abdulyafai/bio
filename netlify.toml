@@ -4,6 +4,7 @@
 [[headers]]
   for = "/*"
     [headers.values]
+    WWW-Authenticate = "Basic realm=\"Restricted Area\""
     Basic-Auth = ":${PASSWORD}"
     X-Debug-Info = "Netlify config processed"
 
