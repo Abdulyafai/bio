@@ -5,6 +5,7 @@
   for = "/*"
     [headers.values]
     Basic-Auth = ":${PASSWORD}"
+    X-Debug-Info = "Netlify config processed"
 
 [[redirects]]
   from = "/*"
