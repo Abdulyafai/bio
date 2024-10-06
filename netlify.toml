@@ -1,10 +1,13 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = true
+[build]
+  publish = "."
 
 [[headers]]
   for = "/*"
     [headers.values]
     Basic-Auth = ":${PASSWORD}"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
