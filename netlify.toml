@@ -2,9 +2,7 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
-[context.production.environment]
-  PASSWORD = "aziz"
+  force = true
 
 [[headers]]
   for = "/*"
