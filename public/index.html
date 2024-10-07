@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <h1>Enter Password</h1>
+    <input type="password" id="password">
+    <button onclick="login()">Submit</button>
+
+    <script>
+        async function login() {
+            const password = document.getElementById('password').value;
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password })
+            });
+            const data = await response.json();
+            if (data.success) {
+                window.location.href = '/content';
+            } else {
+                alert('Incorrect password');
+            }
+        }
+    </script>
+</body>
+
+</html>
