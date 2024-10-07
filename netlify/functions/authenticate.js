@@ -2,6 +2,7 @@
 exports.handler = async (event) => {
   const { password } = JSON.parse(event.body);
   const correctPassword = process.env.PASSWORD;
+  console.log("password is " + correctPassword);
 
   if (password === correctPassword) {
     return {
