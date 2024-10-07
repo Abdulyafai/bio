@@ -1,7 +1,8 @@
 // netlify/functions/authenticate.js
 exports.handler = async (event) => {
   const { password } = JSON.parse(event.body);
-  const correctPassword = process.env.PASSWORD;
+  // const correctPassword = process.env.PASSWORD;
+  const correctPassword = "aziz";
   console.log("password is " + correctPassword);
 
   if (password === correctPassword) {
