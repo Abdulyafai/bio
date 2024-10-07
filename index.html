@@ -5,6 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protected Content</title>
+    <script>
+        const correctPassword = "aziz"; // Replace with your actual password
+
+        function authenticate() {
+            const password = document.getElementById('password').value;
+            if (password === correctPassword) {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('Incorrect password');
+            }
+        }
+
+        // Simple encryption function (not very secure, but better than plaintext)
+        function encrypt(text) {
+            return btoa(text.split('').map(char => String.fromCharCode(char.charCodeAt(0) + 1)).join(''));
+        }
+
+        // Simple decryption function
+        function decrypt(encoded) {
+            return atob(encoded).split('').map(char => String.fromCharCode(char.charCodeAt(0) - 1)).join('');
+        }
+
+        // Encrypt your content
+        const encryptedContent = encrypt(`
+        <h1>Protected Content</h1>
+        <p>This is your protected static content. Reema is awesome!</p>
+    `);
+
+        window.onload = function () {
+            document.getElementById('encryptedContent').textContent = encryptedContent;
+        }
+
+        function showContent() {
+            const decryptedContent = decrypt(document.getElementById('encryptedContent').textContent);
+            document.getElementById('content').innerHTML = decryptedContent;
+        }
+    </script>
 </head>
 
 <body>
@@ -14,53 +52,8 @@
         <button onclick="authenticate()">Submit</button>
     </div>
     <div id="content" style="display: none;"></div>
-
-    <script>
-        async function authenticate() {
-            const password = document.getElementById('password').value;
-            try {
-                const response = await fetch('/.netlify/functions/authenticate', {
-                    method: 'POST',
-                    body: JSON.stringify({ password })
-                });
-                const data = await response.json();
-                if (data.authenticated) {
-                    localStorage.setItem('token', data.token);
-                    fetchContent();
-                } else {
-                    alert('Invalid password');
-                }
-            } catch (error) {
-                console.error('Authentication error:', error);
-                alert('An error occurred during authentication');
-            }
-        }
-
-        async function fetchContent() {
-            const token = localStorage.getItem('token');
-            if (!token) return;
-
-            try {
-                const response = await fetch('/.netlify/functions/get-content', {
-                    headers: { 'Authorization': `Bearer ${token}` }
-                });
-                const data = await response.json();
-                if (data.content) {
-                    document.getElementById('loginForm').style.display = 'none';
-                    document.getElementById('content').style.display = 'block';
-                    document.getElementById('content').innerHTML = data.content;
-                } else {
-                    throw new Error('No content received');
-                }
-            } catch (error) {
-                console.error('Content fetch error:', error);
-                alert('An error occurred while fetching content');
-                localStorage.removeItem('token');
-            }
-        }
-
-        fetchContent(); // Try to fetch content on page load
-    </script>
+    <div id="encryptedContent" style="display: none;"></div>
+    <script>showContent();</script>
 </body>
 
 </html>
