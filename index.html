@@ -4,56 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protected Content</title>
-    <script>
-        const correctPassword = "aziz"; // Replace with your actual password
-
-        function authenticate() {
-            const password = document.getElementById('password').value;
-            if (password === correctPassword) {
-                document.getElementById('loginForm').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-            } else {
-                alert('Incorrect password');
-            }
-        }
-
-        // Simple encryption function (not very secure, but better than plaintext)
-        function encrypt(text) {
-            return btoa(text.split('').map(char => String.fromCharCode(char.charCodeAt(0) + 1)).join(''));
-        }
-
-        // Simple decryption function
-        function decrypt(encoded) {
-            return atob(encoded).split('').map(char => String.fromCharCode(char.charCodeAt(0) - 1)).join('');
-        }
-
-        // Encrypt your content
-        const encryptedContent = encrypt(`
-        <h1>Protected Content</h1>
-        <p>This is your protected static content. Reema is awesome!</p>
-    `);
-
-        window.onload = function () {
-            document.getElementById('encryptedContent').textContent = encryptedContent;
-        }
-
-        function showContent() {
-            const decryptedContent = decrypt(document.getElementById('encryptedContent').textContent);
-            document.getElementById('content').innerHTML = decryptedContent;
-        }
-    </script>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div id="loginForm">
-        <h2>Enter Password</h2>
-        <input type="password" id="password">
-        <button onclick="authenticate()">Submit</button>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
     </div>
-    <div id="content" style="display: none;"></div>
-    <div id="encryptedContent" style="display: none;"></div>
-    <script>showContent();</script>
+    <script src="script.js"></script>
 </body>
 
 </html>
