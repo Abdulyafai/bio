@@ -1,23 +1,15 @@
 {
-  "name": "bio",
+  "name": "aziz-bio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Your project description",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Abdulyafai/bio.git"
+    "build": "# Add your build command here if needed"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Abdulyafai/bio/issues"
-  },
-  "homepage": "https://github.com/Abdulyafai/bio#readme",
   "dependencies": {
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^8.5.1"
   }
 }
